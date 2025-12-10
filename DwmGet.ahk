@@ -9,11 +9,13 @@
 ; Author: SevenKeyboard Ltd. (2025)
 ; License: MIT License
 ;==============================================================
+
 /*
 Example Usage:
     msgbox(DwmGet.AccentColor)      ;  0xff00b9ff
     msgbox(DwmGet.NonexistentKey)   ;  ""
 */
+
 class VersionManager_DwmGet
 {
     static _ := this._init()
