@@ -21,9 +21,9 @@ class VersionManager_DwmGet
         global
         DWMGET_VERSION := "1.0.0"
         if (!this._verCheck(&EVENT_VERSION, "1.0.0"))
-            throw valueError("Event version 1.x is required (minimum 1.0.0).")
+            throw error("Event version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(&WAITFORSINGLEOBJECTASYNC_VERSION, "1.0.0"))
-            throw valueError("WaitForSingleObjectAsync version 1.x is required (minimum 1.0.0).")
+            throw error("WaitForSingleObjectAsync version 1.x is required (minimum 1.0.0).")
         return true
     }
     static _verCheck(&actual, required)    {
