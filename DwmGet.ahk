@@ -110,7 +110,7 @@ class DwmGet extends DwmGetBase
     _changedCallback()    {
         static REG_NOTIFY_CHANGE_LAST_SET := 0x00000004
         if (this._userCallbacks.length())    {
-            for _, fn in this._userCallbacks
+            for _,fn in this._userCallbacks
                 if (fn.call())
                     break
         }
