@@ -21,7 +21,7 @@ class VersionManager_DwmGet
     static _ := this._init()
     static _init()    {
         global
-        DWMGET_VERSION := "1.0.1"
+        DWMGET_VERSION := "1.0.2"
         if (!this._verCheck(&EVENT_VERSION, "1.0.0"))
             throw error("Event version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(&WAITFORSINGLEOBJECTASYNC_VERSION, "1.0.0"))
