@@ -21,7 +21,7 @@ class VersionManager_DwmGet
     static _ := VersionManager_DwmGet._init()
     _init()    {
         global
-        DWMGET_VERSION := "1.0.1"
+        DWMGET_VERSION := "1.0.2"
         if (!this._verCheck(EVENT_VERSION, "1.0.0"))
             throw exception("Event version 1.x is required (minimum 1.0.0).")
         if (!this._verCheck(WAITFORSINGLEOBJECTASYNC_VERSION, "1.0.0"))
@@ -149,7 +149,11 @@ class DwmGetBase
         EnableAeroPeek
         EnableWindowColorization
         */
-        regRead data, % "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM", % valueName
-        return (errorLevel?"":format("{:#x}",data))
+        try  {
+            regRead data, % "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM", % valueName
+        }  catch  {
+            return ""
+        }
+        return format("{:#x}",data)
     }
 }
